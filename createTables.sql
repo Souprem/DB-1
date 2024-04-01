@@ -27,11 +27,12 @@ CREATE TABLE "Player" (
 CREATE TABLE "Rankings Tournament" (
 	"deckID"	INTEGER,
 	"tournamentID"	INTEGER,
-	"archetype"	TEXT,
+	"playerID"	INTEGER,
+	"ranking"	INTEGER,
 	FOREIGN KEY("playerID") REFERENCES "Player"("playerID"),
 	FOREIGN KEY("deckID") REFERENCES "Deck"("deckID"),
     FOREIGN KEY("tournamentID") REFERENCES "Tournament"("tournamentID")
-	PRIMARY KEY("deckID", "tournamentID")
+	PRIMARY KEY("ranking", "tournamentID")
 )
 
 CREATE TABLE "Cards in Deck" (
